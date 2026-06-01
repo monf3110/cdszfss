@@ -1,0 +1,27 @@
+
+:root{--bg:#F5F2ED;--gold:#B39463;--dark:#2B2723}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:78px;display:flex;justify-content:space-around;align-items:center;background:rgba(245,242,237,.92);backdrop-filter:blur(18px);border-top:1px solid #ddd;z-index:9999}
+.nav-item{display:flex;flex-direction:column;align-items:center;font-size:12px}
+.nav-item.active{color:var(--gold);font-weight:700}
+.menu-btn{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.4)}
+.side-menu{position:fixed;top:0;right:-280px;width:260px;height:100%;background:#fff;transition:.35s;z-index:10000;padding:20px;box-shadow:-10px 0 30px rgba(0,0,0,.1)}
+.side-menu.open{right:0}
+.modern-btn{padding:16px 28px;border-radius:18px;background:linear-gradient(135deg,#b39463,#d2b07a);color:white;font-weight:700;display:inline-block;box-shadow:0 8px 20px rgba(179,148,99,.3)}
+.profile-action{display:block;background:white;padding:18px;border-radius:18px;margin:12px 0}
+
+:root{--bg:#F5F2ED;--gold:#B39463;--dark:#2B2723}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--dark);font-family:Inter,sans-serif;transition:opacity .35s ease,transform .35s ease}
+body.page-leave{opacity:0;transform:translateY(12px)}
+a{text-decoration:none;color:inherit}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:78px;display:flex;justify-content:space-around;align-items:center;background:rgba(245,242,237,.88);backdrop-filter:blur(18px);z-index:9999;border-top:1px solid #ddd}
+.nav-item{display:flex;flex-direction:column;align-items:center;font-size:12px}
+.nav-item.active{color:var(--gold);font-weight:600}
+.menu{cursor:pointer}
+.side-menu{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.3s;z-index:10000}
+.side-menu.open{opacity:1;pointer-events:auto}
+.side-panel{position:absolute;right:0;top:0;height:100%;width:280px;background:#f7f4ef;transform:translateX(100%);transition:.35s;padding:24px}
+.side-menu.open .side-panel{transform:translateX(0)}
+.side-panel a{display:block;padding:14px 0}

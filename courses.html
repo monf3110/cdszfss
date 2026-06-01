@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Курсы</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#F5F2ED;
+--gold:#B39463;
+--dark:#2B2723;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:var(--bg);
+font-family:Inter,sans-serif;
+color:var(--dark);
+padding-bottom:100px;
+}
+
+.header{
+padding:24px;
+}
+
+.header h1{
+font-size:56px;
+font-family:
+'Cormorant Garamond',
+serif;
+}
+
+.subtitle{
+color:#777;
+margin-top:6px;
+}
+
+.filters{
+display:flex;
+gap:10px;
+overflow:auto;
+padding:0 24px 20px;
+}
+
+.filters button{
+
+border:none;
+
+padding:12px 18px;
+
+border-radius:18px;
+
+background:white;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.filters button.active{
+
+background:var(--gold);
+
+color:white;
+
+}
+
+.container{
+
+padding:0 24px;
+}
+
+.course{
+
+background:white;
+
+border-radius:30px;
+
+padding:22px;
+
+margin-bottom:18px;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.06);
+
+transition:.3s;
+}
+
+.course:hover{
+
+transform:
+translateY(-4px);
+
+}
+
+.course-title{
+
+font-size:24px;
+
+font-family:
+'Cormorant Garamond',
+serif;
+
+margin-bottom:8px;
+}
+
+.course-text{
+
+color:#666;
+
+line-height:1.7;
+
+margin-bottom:16px;
+}
+
+.progress{
+
+height:12px;
+
+background:#ece4d8;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:16px;
+}
+
+.progress-fill{
+
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#B39463,
+#D8B67D
+);
+
+border-radius:30px;
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 18px;
+
+border-radius:16px;
+
+background:#40382f;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+}
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+left:0;
+right:0;
+
+height:82px;
+
+background:
+rgba(245,242,237,.8);
+
+backdrop-filter:
+blur(20px);
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+border-top:
+1px solid #ddd;
+}
+
+.nav-item{
+
+text-align:center;
+
+font-size:12px;
+}
+
+.nav-icon{
+
+display:block;
+
+font-size:24px;
+
+margin-bottom:4px;
+}
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+transition:.8s;
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:none;
+}
+
+
+a{text-decoration:none;color:inherit}
+body{font-family:Inter,sans-serif}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif}
+.bottom-nav a.nav-item{text-decoration:none;color:#2B2723}
+.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px}
+.card{width:220px;min-width:220px;background:white;border-radius:28px;overflow:hidden;box-shadow:0 15px 30px rgba(0,0,0,.08)}
+.card img{width:100%;height:180px;object-fit:cover}
+</style>
+<link rel="stylesheet" href="style-unified.css"></head>
+<body><div class="side-menu" id="menu"><h3>Меню</h3><p><a href="index.html">Главная</a></p><p><a href="courses.html">Курсы</a></p><p><a href="profile.html">Профиль</a></p></div>
+
+<div class="header">
+
+<h1>
+Курсы
+</h1>
+
+<div class="subtitle">
+
+Продолжайте изучение
+культурного наследия
+
+</div>
+
+</div>
+
+<div class="filters">
+
+<button class="active">
+Все
+</button>
+
+<button>
+Руны
+</button>
+
+<button>
+Культура
+</button>
+
+<button>
+Искусство
+</button>
+
+</div>
+
+<div class="container">
+
+<div class="course reveal">
+
+<div class="course-title">
+Енисейские руны
+</div>
+
+<div class="course-text">
+
+История, алфавит,
+практика чтения и тесты.
+
+</div>
+
+<div class="progress">
+
+<div class="progress-fill"
+style="width:45%">
+</div>
+
+</div>
+
+<a
+href="runes.html"
+class="btn">
+
+Продолжить
+
+</a>
+
+</div>
+
+<div class="course reveal">
+
+<div class="course-title">
+Кыргызская культура
+</div>
+
+<div class="course-text">
+
+Манас, юрта,
+традиции и история.
+
+</div>
+
+<div class="progress">
+
+<div class="progress-fill"
+style="width:65%">
+</div>
+
+</div>
+
+<a
+href="culture.html"
+class="btn">
+
+Продолжить
+
+</a>
+
+</div>
+
+<div class="course reveal">
+
+<div class="course-title">
+Традиции и искусство
+</div>
+
+<div class="course-text">
+
+Музыка, орнаменты,
+ремёсла и наследие.
+
+</div>
+
+<div class="progress">
+
+<div class="progress-fill"
+style="width:20%">
+</div>
+
+</div>
+
+<a
+href="art.html"
+class="btn">
+
+Продолжить
+
+</a>
+
+</div>
+
+</div>
+
+<nav class="bottom-nav">
+<a href="index.html" class="nav-item"><span class="nav-icon">⌂</span>Главная</a>
+<a href="courses.html" class="nav-item"><span class="nav-icon">📖</span>Курсы</a>
+<a href="profile.html" class="nav-item"><span class="nav-icon">❤</span>Избранное</a>
+<a href="profile.html" class="nav-item"><span class="nav-icon">👤</span>Профиль</a>
+</nav>
+
+</nav>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

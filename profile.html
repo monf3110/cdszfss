@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Профиль</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#F5F2ED;
+--gold:#B39463;
+--dark:#2B2723;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:var(--bg);
+font-family:Inter,sans-serif;
+color:var(--dark);
+padding-bottom:100px;
+}
+
+.header{
+padding:24px;
+text-align:center;
+}
+
+.avatar{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+
+border:4px solid var(--gold);
+
+box-shadow:
+0 15px 35px
+rgba(0,0,0,.08);
+}
+
+.name{
+
+font-size:42px;
+
+font-family:
+'Cormorant Garamond',
+serif;
+
+margin-top:15px;
+}
+
+.rank{
+
+color:#777;
+
+margin-top:6px;
+}
+
+.container{
+
+padding:20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+
+background:
+rgba(255,255,255,.65);
+
+backdrop-filter:
+blur(16px);
+
+border-radius:30px;
+
+padding:24px;
+
+margin-bottom:20px;
+
+box-shadow:
+0 10px 30px
+rgba(0,0,0,.06);
+
+}
+
+.card h2{
+
+font-family:
+'Cormorant Garamond',
+serif;
+
+font-size:32px;
+
+margin-bottom:15px;
+}
+
+.xp-bar{
+
+height:18px;
+
+background:#e7e0d7;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-top:15px;
+}
+
+.xp-fill{
+
+height:100%;
+
+width:0;
+
+background:
+linear-gradient(
+90deg,
+#B39463,
+#D4B37A
+);
+
+border-radius:30px;
+
+transition:2s;
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:12px;
+}
+
+.stat{
+
+background:white;
+
+padding:18px;
+
+border-radius:20px;
+
+text-align:center;
+}
+
+.value{
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--gold);
+}
+
+.label{
+
+font-size:13px;
+
+color:#777;
+}
+
+.achievement{
+
+background:white;
+
+padding:18px;
+
+border-radius:20px;
+
+margin-bottom:10px;
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+}
+
+.icon{
+
+font-size:28px;
+}
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+transition:.8s;
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:none;
+}
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+left:0;
+right:0;
+
+height:82px;
+
+background:
+rgba(245,242,237,.8);
+
+backdrop-filter:
+blur(20px);
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+border-top:
+1px solid #ddd;
+}
+
+.nav-item{
+
+text-align:center;
+
+font-size:12px;
+}
+
+.nav-icon{
+
+display:block;
+
+font-size:24px;
+
+margin-bottom:4px;
+}
+
+
+a{text-decoration:none;color:inherit}
+body{font-family:Inter,sans-serif}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif}
+.bottom-nav a.nav-item{text-decoration:none;color:#2B2723}
+.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px}
+.card{width:220px;min-width:220px;background:white;border-radius:28px;overflow:hidden;box-shadow:0 15px 30px rgba(0,0,0,.08)}
+.card img{width:100%;height:180px;object-fit:cover}
+</style>
+<link rel="stylesheet" href="style-unified.css"></head>
+<body><div class="side-menu" id="menu"><h3>Меню</h3><p><a href="index.html">Главная</a></p><p><a href="courses.html">Курсы</a></p><p><a href="profile.html">Профиль</a></p></div>
+
+<div class="header">
+
+<img
+src="assets/avatar.png"
+class="avatar">
+
+<h1 class="name">
+Айдан А.
+</h1>
+
+<div class="rank">
+Путник знаний • Уровень 3
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="card reveal">
+
+<h2>
+Прогресс
+</h2>
+
+<p>
+750 / 1500 XP
+</p>
+
+<div class="xp-bar">
+
+<div class="xp-fill"
+id="xpFill">
+</div>
+
+</div>
+
+</div>
+
+<div class="card reveal">
+
+<h2>
+Статистика
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="value">
+12
+</div>
+
+<div class="label">
+Уроков
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="value">
+5
+</div>
+
+<div class="label">
+Тестов
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="value">
+3
+</div>
+
+<div class="label">
+Достижения
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card reveal">
+
+<h2>
+Достижения
+</h2>
+
+<div class="achievement">
+<div class="icon">🏆</div>
+<div>
+Первая руна
+</div>
+</div>
+
+<div class="achievement">
+<div class="icon">📜</div>
+<div>
+Исследователь культуры
+</div>
+</div>
+
+<div class="achievement">
+<div class="icon">⭐</div>
+<div>
+Первые 10 уроков
+</div>
+</div>
+
+</div>
+
+<div class="card reveal">
+
+<h2>
+Избранное
+</h2>
+
+<p>
+
+• История рунической письменности
+
+<br><br>
+
+• Эпос Манас
+
+<br><br>
+
+• Кыргызские орнаменты
+
+</p>
+
+</div>
+
+<a class="profile-action" href="favorites.html">❤ Избранные материалы</a></div><nav class="bottom-nav">
+<a href="index.html" class="nav-item"><span class="nav-icon">⌂</span>Главная</a>
+<a href="courses.html" class="nav-item"><span class="nav-icon">📖</span>Курсы</a>
+<a href="profile.html" class="nav-item"><span class="nav-icon">❤</span>Избранное</a>
+<a href="profile.html" class="nav-item"><span class="nav-icon">👤</span>Профиль</a>
+</nav>
+
+<script>
+
+setTimeout(()=>{
+
+document
+.getElementById('xpFill')
+.style.width='50%';
+
+},500);
+
+const observer=
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target
+.classList
+.add('active');
+
+}
+
+});
+
+});
+
+document
+.querySelectorAll('.reveal')
+.forEach(el=>
+observer.observe(el));
+
+</script>
+
+<script src="app.js"></script></body>
+</html>

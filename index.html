@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang='ru'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>CHYM-KORGONN</title>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#F5F2ED;--gold:#B39463;--dark:#2B2723}
+*{margin:0;padding:0;box-sizing:border-box} body{font-family:Inter,sans-serif;background:var(--bg);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.hero{height:100vh;background:linear-gradient(rgba(245,242,237,.82),rgba(245,242,237,.2)),url('assets/hero.png') center bottom/cover no-repeat}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px}.logo{height:60px}
+.menu{width:58px;height:58px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.content{padding:8vh 24px;max-width:500px}.title{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,11vw,110px);line-height:.9}
+.cta{display:inline-block;margin-top:20px;padding:14px 22px;border:1px solid var(--gold);border-radius:18px;background:rgba(255,255,255,.35)}
+.wave svg{display:block}
+.section{padding:20px 16px 110px}
+.cards{display:flex;gap:16px;overflow-x:auto}.cards::-webkit-scrollbar{display:none}
+.card{min-width:240px;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);position:relative}
+.card img{width:100%;height:190px;object-fit:cover}.icon{position:absolute;left:50%;top:160px;transform:translateX(-50%);width:64px;height:64px;border-radius:50%;background:#4a4136;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;color:#d0ab74}
+.body{padding:42px 18px 18px}.body h3{font-family:'Cormorant Garamond',serif;font-size:30px}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:78px;background:rgba(245,242,237,.95);display:flex;justify-content:space-around;align-items:center;border-top:1px solid #ddd}
+.nav-item{display:flex;flex-direction:column;align-items:center;font-size:12px}
+</style><link rel="stylesheet" href="style-unified.css"></head><body><div class="side-menu" id="menu"><h3>Меню</h3><p><a href="index.html">Главная</a></p><p><a href="courses.html">Курсы</a></p><p><a href="profile.html">Профиль</a></p></div>
+<section class='hero'><div class='top'><img class='logo' src='assets/logo.png'><div class='menu'>≡</div></div><div class='content'><div class='title'>ПОЗНАВАЙ.<br>ИЗУЧАЙ.<br>СОХРАНЯЙ.</div><div class='cta'>НАЧАТЬ ПУТЬ →</button>
+<div id="pathMenu" style="display:none;margin-top:12px;background:white;border-radius:20px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.08)">
+<a href="runes.html">Енисейские руны</a><br><br>
+<a href="culture.html">Кыргызская культура</a><br><br>
+<a href="art.html">Традиции и искусство</a>
+</div></div></div></section>
+<div class='wave'><svg viewBox='0 0 1440 180'><path fill='#F5F2ED' d='M0,96L80,101.3C160,107,320,117,480,112C640,107,800,85,960,90.7C1120,96,1280,128,1360,144L1440,160L1440,320L0,320Z'/></svg></div>
+<section class='section'><div class='cards'>
+<a class='card' href='runes.html'><img src='assets/runes.jpg'><div class='icon'>✶</div><div class='body'><h3>Енисейские руны</h3><p>Изучение древнетюркской письменности.</p></div></a>
+<a class='card' href='culture.html'><img src='assets/culture.jpg'><div class='icon'>☉</div><div class='body'><h3>Кыргызская культура</h3><p>Традиции, Манас, история.</p></div></a>
+<a class='card' href='art.html'><img src='assets/art.jpg'><div class='icon'>♬</div><div class='body'><h3>Традиции и искусство</h3><p>Музыка, ремесла и орнаменты.</p></div></a>
+</div></section>
+<nav class='bottom-nav'>
+<a href='index.html' class='nav-item'>⌂<span>Главная</span></a>
+<a href='courses.html' class='nav-item'>📖<span>Курсы</span></a>
+<a href='profile.html' class='nav-item'>❤<span>Избранное</span></a>
+<a href='profile.html' class='nav-item'>👤<span>Профиль</span></a>
+</nav><script src="app.js"></script></body></html>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const b=document.querySelector('.cta');
+ const m=document.getElementById('pathMenu');
+ if(b&&m){b.onclick=()=>m.style.display=m.style.display==='block'?'none':'block';}
+});
+</script>
